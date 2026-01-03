@@ -1,208 +1,240 @@
-https://docs.google.com/presentation/d/1IZOn6uWjNrUdEcHziV1dZxehpJ7LmiNPeU7UjCP-Sm4/mobilepresent?slide=id.g12d55fdcd29_0_5
-
-
-🫀 Heart Disease Prediction
-
-A machine learning project that analyzes clinical data to predict the presence of heart disease using various classification algorithms. This repository demonstrates data preprocessing, feature analysis, model training, evaluation, and a deployed prediction interface (if included) — valuable for both academic and real-world healthcare applications.
-
+🫀 Heart Disease Prediction Using Hybrid Machine Learning Models
 📌 Project Overview
 
-Heart disease is a leading cause of death worldwide, and early detection can significantly improve patient outcomes. This project uses machine learning to automatically predict the likelihood of heart disease in individuals based on health metrics such as age, blood pressure, cholesterol levels, and more. The model can help clinicians and researchers understand risk factors and make informed decisions. 
-Dataquest
+Heart disease remains one of the leading causes of mortality worldwide. Early detection plays a crucial role in preventing severe complications and reducing death rates. This project presents a machine learning–based heart disease prediction system using a multi-feature, hybrid classification approach that evaluates multiple algorithms and selects the best-performing model for final prediction.
 
-🧠 Motivation
+The system integrates data preprocessing, feature extraction, multiple classifiers, performance evaluation, and a user-friendly web interface to provide accurate and interpretable heart disease predictions.
 
-💡 Accelerate screening for heart disease using data-driven models
+This implementation is based on the methodology and results published in the International Research Journal of Engineering and Technology (IRJET), July 2022 
 
-📊 Provide insights into feature importance in cardiovascular health
+Heart Disease Prediction
 
-🩺 Support healthcare practitioners with predictive risk assessments
+.
 
-📚 Showcase structured machine learning workflows & model evaluation
+🎯 Objectives
 
-Machine learning classifiers in healthcare empower professionals with tools that augment — but do not replace — medical expertise.
+Predict the presence or absence of heart disease using clinical attributes
 
-🗂 Project Structure
+Compare multiple machine learning classifiers
 
-Here’s how the repository is organized (adjust if your files differ):
+Select the best-performing model based on evaluation metrics
 
-HeartDiseasePrediction/
-├── data/
-│   ├── heart.csv
-│   └── README_DATA.md
-├── notebooks/
-│   ├── EDA_HeartDisease.ipynb
-│   ├── Model_Training.ipynb
-│   └── Model_Evaluation.ipynb
-├── src/
-│   ├── preprocess.py
-│   ├── train.py
-│   ├── evaluate.py
-│   └── predict.py
-├── models/
-│   └── heart_disease_model.pkl
-├── requirements.txt
-├── .gitignore
-└── README.md
+Provide an interactive user interface for real-world usability
+
+Enable early risk awareness and preventive healthcare actions
+
+🧠 Methodology Overview
+
+The system follows a structured machine learning pipeline:
+
+Patient Data Input
+
+Data Preprocessing
+
+Handling missing values
+
+Noise and outlier reduction
+
+Feature normalization
+
+Feature Extraction
+
+Selection of clinically significant attributes
+
+Model Training
+
+Multiple classifiers trained on the same dataset
+
+Hybrid Model Selection
+
+Best model chosen based on performance
+
+Prediction & Result Display
+
+Diet Plan Recommendation (UI Feature)
+
+This hybrid approach ensures robustness and improves prediction accuracy over single-model systems 
+
+Heart Disease Prediction
+
+.
+
+📊 Dataset Description
+
+Source: UCI Machine Learning Repository
+
+Records: 303 patient samples
+
+Features: 14 clinical attributes
+
+Target Variable: Presence of heart disease (binary classification)
+| Feature                         | Description                                                     |
+| ------------------------------- | --------------------------------------------------------------- |
+| Age                             | Age of patient (years)                                          |
+| Sex                             | 0 = Female, 1 = Male                                            |
+| Chest Pain (cp)                 | Typical angina, atypical angina, non-anginal pain, asymptomatic |
+| Resting Blood Pressure          | Measured in mm Hg                                               |
+| Serum Cholesterol               | mg/dl                                                           |
+| Fasting Blood Sugar (fbs)       | >120 mg/dl (1 = true, 0 = false)                                |
+| Resting ECG                     | Normal / ST abnormality / LV hypertrophy                        |
+| Max Heart Rate (thalach)        | Maximum heart rate achieved                                     |
+| Exercise-Induced Angina (exang) | Yes / No                                                        |
+| ST Depression (oldpeak)         | Induced by exercise                                             |
+| Slope                           | Slope of peak exercise ST segment                               |
+| CA                              | Number of major vessels colored (0–3)                           |
+| Thal                            | Normal / Fixed defect / Reversible defect                       |
 
 
-📊 Data Description
+Heart Disease Prediction
 
-The dataset commonly used for this problem is derived from the UCI Heart Disease dataset, which includes clinical features and a binary target variable indicating the presence of heart disease. Typical features include:
+🧹 Data Preprocessing
 
-Feature	Description
-age	Age in years
-sex	Biological sex (1 = male, 0 = female)
-cp	Chest pain type (0–3)
-trestbps	Resting blood pressure
-chol	Serum cholesterol (mg/dl)
-fbs	Fasting blood sugar > 120 mg/dl
-restecg	Resting electrocardiographic results
-thalach	Maximum heart rate achieved
-exang	Exercise-induced angina
-oldpeak	ST depression induced by exercise
-slope	Slope of the peak exercise ST segment
-ca	Number of major vessels colored by fluoroscopy
-thal	Thalassemia status
-target	Heart disease presence (0 = no, 1 = yes)
-(Derived from typical heart disease datasets used in ML projects.) 
-GitHub
-	
-🚀 Features & Highlights
-🔍 Data Loading & Preprocessing
+Missing values handled using statistical normalization
 
-Handles missing values and invalid records
+Features standardized using mean and standard deviation
 
-Encodes categorical features
+Noise and outliers removed to improve model generalization
 
-Normalizes or standardizes numerical features
 
-📈 Exploratory Data Analysis (EDA)
 
-Visualizes feature distributions
 
-Shows correlation heatmaps
+	​
 
-Detects class imbalance
 
-🤖 Model Training
+This ensures uniform feature scaling across models 
 
-Trains and compares multiple machine learning algorithms such as:
+Heart Disease Prediction
+
+🤖 Machine Learning Models Used
+
+The following classifiers were trained and evaluated:
 
 Logistic Regression
 
-Random Forest
+Gaussian Naive Bayes
 
-Support Vector Machine
+Linear Support Vector Classifier (Linear SVC)
 
-K-Nearest Neighbors
+K-Nearest Neighbors (KNN)
 
 Decision Tree
-(Common classification models in heart disease prediction projects. 
-GitHub
-)
 
-📊 Model Evaluation
+Random Forest
 
-Accuracy, Precision, Recall
+Support Vector Machine (SVM)
 
-Confusion matrix
+Each model was evaluated using the same training and testing split to ensure fairness 
 
-ROC-AUC analysis
+Heart Disease Prediction
 
-Feature importance
 
-🧪 Predictive Interface
+📈 Model Evaluation Metrics
 
-A script (or app) that lets users input new patient data and outputs a heart disease prediction.
+Models were compared using:
 
-🛠 Tech Stack
-Technology	Use
-Python	Core programming language
-scikit-learn	Machine learning models & evaluation
-pandas / NumPy	Data manipulation
-matplotlib / seaborn	Visualizations
-pickle / joblib	Model serialization
-Jupyter Notebook	Interactive exploration
+Accuracy
 
-Install dependencies:
+Precision
 
+Sensitivity (Recall)
+
+Specificity
+
+F1 Score
+
+ROC Curve
+
+Log Loss
+
+Matthews Correlation Coefficient
+
+🏆 Best Performing Model
+
+Linear SVC achieved the highest overall performance:
+
+Metric	Value
+Accuracy	90.78%
+Precision	96.87%
+Sensitivity	83.78%
+F1 Score	89.85%
+ROC	90.60%
+
+Hence, Linear SVC was selected as the final prediction model 
+
+Heart Disease Prediction
+
+.
+
+🖥 User Interface Features
+
+The project includes a complete web-based UI, enabling non-technical users to interact with the model:
+
+UI Components
+
+User Registration & Login
+
+Patient Data Input Form
+
+Prediction Result Page
+
+Diet Plan Recommendation Page
+
+Database Storage of User Records
+
+Users enter medical parameters through dropdowns and numeric inputs, and the system returns a clear prediction:
+
+Heart Disease Present
+
+No Heart Disease
+
+Heart Disease Prediction
+
+🛠 Technology Stack
+
+Python
+
+scikit-learn
+
+NumPy / Pandas
+
+Matplotlib / Seaborn
+
+HTML / CSS / Backend Framework
+
+MySQL / phpMyAdmin (for user data storage)
+
+🚀 How to Run the Project (Typical Setup)
+git clone https://github.com/SrilakshmiNarayanaMurthy/HeartDiseasePrediction.git
+cd HeartDiseasePrediction
 pip install -r requirements.txt
-
-📈 Usage
-💻 1. Data Exploration
-
-Launch the EDA notebook:
-
-jupyter notebook notebooks/EDA_HeartDisease.ipynb
-
-🏃 2. Train Models
-
-Run the training notebook/script:
-
-jupyter notebook notebooks/Model_Training.ipynb
+python app.py
 
 
-or:
+(Adjust commands based on your actual repo structure.)
 
-python src/train.py --data_path data/heart.csv
+⚠️ Disclaimer
 
-🧠 3. Evaluate Models
+This system is intended for educational and research purposes only.
+It is not a substitute for professional medical diagnosis or treatment.
 
-Execute evaluation:
+📌 Conclusion
 
-jupyter notebook notebooks/Model_Evaluation.ipynb
+This project demonstrates how a hybrid machine learning framework can significantly improve heart disease prediction accuracy. By combining multiple classifiers and selecting the best-performing model, the system provides reliable predictions, early risk awareness, and practical health guidance.
 
+The integration of analytics with a user-friendly interface makes this project suitable for academic research, healthcare analytics portfolios, and ML demonstrations 
 
-or:
+Heart Disease Prediction
 
-python src/evaluate.py --model models/heart_disease_model.pkl
+.
 
-🩺 4. Make Prediction
+🔮 Future Enhancements
 
-Launch prediction script:
+Multi-stage disease severity classification
 
-python src/predict.py --input_data "63,1,3,145,233,1,0,150,0,2.3,0,0,1"
+SMS / alert integration for patients
 
+Real-time data ingestion from healthcare centers
 
-(Replace with your own clinical inputs as needed.)
+Explainable AI (SHAP/LIME) for clinical interpretability
 
-📈 Results
-
-The goal of this project is to identify a robust predictive model that achieves high performance on unseen patient data. Typical metrics to report include:
-
-Metric	Description
-Accuracy	% of correct predictions
-Precision	True positives among positive predictions
-Recall	True positives among actual positives
-ROC-AUC	Balanced measure of performance
-
-Results may vary by algorithm, and final selections are based on performance and interpretability.
-
-📌 Insights
-
-Certain features — such as age, chest pain type, and resting blood pressure — often show strong correlations with heart disease status. 
-Dataquest
-
-Random Forest or SVM frequently outperform simpler models like Logistic Regression, though Logistic Regression remains a strong baseline. 
-GitHub
-
-🧾 License & Disclaimer
-
-⚠️ Medical Disclaimer: This tool is intended for educational and research purposes only. It does not provide medical diagnosis or advice. Always consult healthcare professionals for clinical decisions.
-
-Licensed under MIT License — see LICENSE for details.
-
-📚 Acknowledgements
-
-Thanks to open-source contributors and foundations such as UCI Machine Learning Repository, scikit-learn, and the broader data science community that make predictive analytics accessible.
-
-⭐ Future Enhancements
-
-Deployment as a Flask/Streamlit web app
-
-Integration with Explainable AI (XAI) tools
-
-Inclusion of cross-validation and hyperparameter tuning
-
-Support for real-time clinical data ingestion
+Cloud deployment with secure APIs
